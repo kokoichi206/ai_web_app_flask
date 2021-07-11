@@ -35,13 +35,13 @@ def result():
             print(file.filename + ": File not allowed!")
             return redirect(url_for("index"))
 
-        # ファイルの保存
-        if os.path.isdir(UPLOAD_FOLDER):
-            shutil.rmtree(UPLOAD_FOLDER) 
-        os.mkdir(UPLOAD_FOLDER)
-        filename = secure_filename(file.filename)  # ファイル名を安全なものに
+        # # ファイルの保存
+        # if os.path.isdir(UPLOAD_FOLDER):
+        #     shutil.rmtree(UPLOAD_FOLDER) 
+        # os.mkdir(UPLOAD_FOLDER)
+        # filename = secure_filename(file.filename)  # ファイル名を安全なものに
         filepath = os.path.join(UPLOAD_FOLDER, filename)
-        file.save(filepath)
+        # file.save(filepath)
 
         # 画像の読み込み
         image = Image.open(filepath)
